@@ -4,7 +4,7 @@ import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Cards = ({ data }) => {
-    const { chefId, recipeId, chefImage, chefName, likes, numberOfRecipes } = data;
+    const { chefId, chefImage, chefName, likes, numberOfRecipes } = data;
     return (
         <Col >
             <Card>

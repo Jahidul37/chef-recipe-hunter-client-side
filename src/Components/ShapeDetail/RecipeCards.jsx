@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 
 const RecipeCards = ({ recipies }) => {
