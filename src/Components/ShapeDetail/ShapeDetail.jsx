@@ -8,7 +8,7 @@ import { Card, Container } from "react-bootstrap";
 
 const ShapeDetail = () => {
     const chefData = useLoaderData();
-    console.log(chefData);
+    // console.log(chefData);
     const { chefImage, chefName, chefBio } = chefData;
     const [recipies, setRecipies] = useState([]);
     useEffect(() => {

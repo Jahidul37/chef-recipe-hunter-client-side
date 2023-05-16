@@ -23,24 +23,24 @@ const Header = () => {
             })
     }
 
-    console.log(user);
+    // console.log(user);
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home">Green Cookers</Navbar.Brand>
+                <Navbar.Brand className='fw-bold' href="#home">Green Cookers</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
                     </Nav>
-                    <Nav>
-                        <Link className='text-decoration-none m-2' to='/'>Home</Link >
-                        <Link className='text-decoration-none m-2' to='/blog'>Blog</Link>
+                    <Nav className='fw-bold'>
+                        <Link className='text-decoration-none text-dark m-3 my-auto' to='/'>Home</Link >
+                        <Link className='text-decoration-none text-dark m-3 my-auto' to='/blog'>Blog</Link>
                         {user &&
-                            <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+                            <FaUserCircle className='my-auto' style={{ fontSize: '2rem' }}></FaUserCircle>
                         }
                         {user ?
-                            <Button onClick={handleLogOut} className='text-decoration-none m-2' variant="outline-dark">LogOut</Button>
+                            <Button onClick={handleLogOut} className='text-decoration-none m-3' variant="outline-dark">LogOut</Button>
                             :
                             <Link to="/login">
                                 <Button variant="outline-dark" to='/login'>Login</Button>

@@ -51,23 +51,15 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" name="accept" label="Accept terms And Conditions" />
-                </Form.Group>
                 <Button variant="primary" type="submit">
                     Register
                 </Button>
                 <br />
-                <Form.Text className="text-success">
+                <Form.Text className="text-dark">
                     Alredy Have an Account? <Link to="/login">Login</Link>
                     <br />
                 </Form.Text>
-                <Form.Text className="text-success">
 
-                </Form.Text>
-                <Form.Text className="text-danger">
-                    Well never share your email with anyone else.
-                </Form.Text>
             </Form>
 
 

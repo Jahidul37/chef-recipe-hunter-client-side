@@ -11,13 +11,14 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FaGithub } from 'react-icons/fa';
 
 const Login = () => {
     const { signInUser } = useContext(AuthContext)
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location);
+    // console.log('login page location', location);
     const from = location.state?.form?.pathname || '/'
 
     const handleLogin = event => {
@@ -25,13 +26,13 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(result => {
                 const loggeduser = result.user;
                 console.log(loggeduser);
-                navigate(form, { replace: true });
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
@@ -82,9 +83,9 @@ const Login = () => {
     }
 
     return (
-        <Container className='mx-auto w-25'>
+        <Container className='mx-auto w-25 my-4'>
 
-            <h2>LogIn</h2>
+            <h2 className='fa-semibold'>LogIn</h2>
 
             <Form onSubmit={handleLogin} className='my-4'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -102,18 +103,13 @@ const Login = () => {
                 </Button>
                 <br />
                 <Form.Text className="text-success">
-                    Don't Have an Account? <Link to="/register">Register</Link>
+                    Don,t Have an Account? <Link to="/register">Register</Link>
                     <br />
                 </Form.Text>
-                <Form.Text className="text-success">
 
-                </Form.Text>
-                <Form.Text className="text-danger">
-                    Well never share your email with anyone else.
-                </Form.Text>
             </Form>
 
-            <div>
+            <div className='my-4'>
                 {
                     user ?
                         <button onClick={handleSignOut}>signOut</button>
@@ -122,7 +118,9 @@ const Login = () => {
                             <GoogleButton className='mx-auto'
                                 onClick={handleGoogleSignIn}
                             />
-                            <button onClick={handleGithubSignIn}>GitHub Login</button>
+                            <Button onClick={handleGithubSignIn} variant=" border border-primary my-3 p-3 fw-semibold">
+                                <FaGithub className='fs-3 me-2'></FaGithub>GitHub Login</Button>
+
                         </>
                 }
                 {user && <div>
