@@ -15,6 +15,8 @@ import Login from './Components/Login/Login';
 import ShapeDetail from './Components/ShapeDetail/ShapeDetail';
 // import AuthProvider from './Components/AuthProvider/AuthProvider';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import AuthProvider from './Components/AuthProvider/AuthProvider';
+import Register from './Components/Login/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
         path: "chef/:id",
         element: <ShapeDetail></ShapeDetail>,
         loader: ({ params }) => fetch(`http://localhost:5000/cookdata/${params.id}`)
@@ -49,7 +55,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
 
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
 
   </React.StrictMode>
 );

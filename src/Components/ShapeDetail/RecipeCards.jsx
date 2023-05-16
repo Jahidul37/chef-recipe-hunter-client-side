@@ -1,7 +1,7 @@
 import { Card, Col, Row } from 'react-bootstrap';
 
 const RecipeCards = ({ recipies }) => {
-    console.log(recipies);
+    // console.log(recipies);
     return (
         <div>
             <Row xs={1} md={2} lg={3} className="g-4">
@@ -12,9 +12,12 @@ const RecipeCards = ({ recipies }) => {
                                 <Card.Img style={{ height: '300px', width: 'auto' }} variant="top" src={recipie.recipeImg} />
                                 <Card.Body>
                                     <Card.Title></Card.Title>
-                                    <div className="d-flex justify-content-between">
+                                    <div>
                                         <h5>{recipie.recipeName}</h5>
-                                        <p>{recipie.ingredients[0]}</p>
+                                        {
+                                            recipie.ingredients.map(data => <p
+                                                key={data.id}>{data}</p>)
+                                        }
                                     </div>
 
                                 </Card.Body>

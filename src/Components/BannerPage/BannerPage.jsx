@@ -5,6 +5,7 @@ import image from '../../assets/mohamed-nohassi-DdglEoIC2y4-unsplash.jpg';
 import image2 from '../../assets/michael-wave-CYnQUywzBtI-unsplash.jpg'
 import image3 from '../../assets/petr-sevcovic-e5Q5vWO55uU-unsplash.jpg'
 
+
 const BannerPage = () => {
     return (
         <div>
@@ -52,6 +53,7 @@ const BannerPage = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+
         </div>
     );
 };

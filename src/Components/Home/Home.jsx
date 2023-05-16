@@ -4,6 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import BannerPage from '../BannerPage/BannerPage';
 import Cards from './Cards/Cards';
+import CookShaperDetails from './CookShaperDetails/CookShaperDetails';
 
 const Home = () => {
     const cookdata = useLoaderData();
@@ -26,6 +27,9 @@ const Home = () => {
                 </Row>
 
             </Container>
+            <CookShaperDetails>
+
+            </CookShaperDetails>
         </>
     );
 };

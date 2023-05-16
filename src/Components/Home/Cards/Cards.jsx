@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 const Cards = ({ data }) => {
-    const { chefId, yearOfExperience, chefImage, chefName, likes, numberOfRecipes } = data;
+    const { chefId, yearOfExperience, chefImage, chefName, likes, numberOfRecipes, chefBio } = data;
     return (
         <Col >
             <Card>
@@ -13,6 +13,7 @@ const Cards = ({ data }) => {
                 <Card.Body>
                     <Card.Title><h4>{chefName}</h4></Card.Title>
                     <h5>Year of Experience : {yearOfExperience}</h5>
+                    <p>{chefBio}</p>
                     <div className="d-flex justify-content-between">
                         <p>{likes}</p>
                         <p>{numberOfRecipes}</p>
