@@ -13,11 +13,14 @@ import Home from './Components/Home/Home';
 import Blog from './Components/Blog/Blog';
 import Login from './Components/Login/Login';
 import ShapeDetail from './Components/ShapeDetail/ShapeDetail';
+// import AuthProvider from './Components/AuthProvider/AuthProvider';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -38,16 +41,15 @@ const router = createBrowserRouter([
         element: <ShapeDetail></ShapeDetail>,
         loader: ({ params }) => fetch(`http://localhost:5000/cookdata/${params.id}`)
       }
-      //   {
-      //   path: '/',
-      //   element: <Home></Home>
-      // }
+
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+
     <RouterProvider router={router} />
+
   </React.StrictMode>
 );

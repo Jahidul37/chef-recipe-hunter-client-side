@@ -3,14 +3,16 @@
 import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
 const Cards = ({ data }) => {
-    const { chefId, chefImage, chefName, likes, numberOfRecipes } = data;
+    const { chefId, yearOfExperience, chefImage, chefName, likes, numberOfRecipes } = data;
     return (
         <Col >
             <Card>
                 <Card.Img style={{ height: '300px', width: 'auto' }} variant="top" src={chefImage} />
                 <Card.Body>
-                    <Card.Title>{chefName}</Card.Title>
+                    <Card.Title><h4>{chefName}</h4></Card.Title>
+                    <h5>Year of Experience : {yearOfExperience}</h5>
                     <div className="d-flex justify-content-between">
                         <p>{likes}</p>
                         <p>{numberOfRecipes}</p>

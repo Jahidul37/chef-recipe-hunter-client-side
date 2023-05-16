@@ -13,8 +13,8 @@ const RecipeCards = ({ recipies }) => {
                                 <Card.Body>
                                     <Card.Title></Card.Title>
                                     <div className="d-flex justify-content-between">
-                                        <p></p>
-                                        <p></p>
+                                        <h5>{recipie.recipeName}</h5>
+                                        <p>{recipie.ingredients[0]}</p>
                                     </div>
 
                                 </Card.Body>
