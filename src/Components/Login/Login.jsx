@@ -8,12 +8,17 @@ import GoogleButton from 'react-google-button'
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
     const { signInUser } = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.form?.pathname || '/'
 
     const handleLogin = event => {
         event.preventDefault();
@@ -26,6 +31,7 @@ const Login = () => {
             .then(result => {
                 const loggeduser = result.user;
                 console.log(loggeduser);
+                navigate(form, { replace: true });
             })
             .catch(error => {
                 console.log(error);

@@ -12,7 +12,17 @@ import { Button } from 'react-bootstrap';
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     console.log(user);
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -30,7 +40,7 @@ const Header = () => {
                             <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
                         }
                         {user ?
-                            <Button className='text-decoration-none m-2' variant="outline-dark">LogOut</Button>
+                            <Button onClick={handleLogOut} className='text-decoration-none m-2' variant="outline-dark">LogOut</Button>
                             :
                             <Link to="/login">
                                 <Button variant="outline-dark" to='/login'>Login</Button>

@@ -17,6 +17,7 @@ import ShapeDetail from './Components/ShapeDetail/ShapeDetail';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
 import Register from './Components/Login/Register/Register';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "chef/:id",
-        element: <ShapeDetail></ShapeDetail>,
+        element: <PrivateRoute><ShapeDetail></ShapeDetail></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/cookdata/${params.id}`)
       }
 
