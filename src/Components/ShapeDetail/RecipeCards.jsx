@@ -1,7 +1,11 @@
 import { Card, Col, Row } from 'react-bootstrap';
-import { FaStar, FaStarHalf } from 'react-icons/fa';
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
+import { useState } from 'react';
 
 const RecipeCards = ({ recipies }) => {
+    const [rating, setRating] = useState(0)
     console.log(recipies);
     return (
         <div>
@@ -23,8 +27,10 @@ const RecipeCards = ({ recipies }) => {
                                     </div>
 
                                     <p><h6>Recipie Process:</h6> {recipie.methodOfCooking}</p>
-                                    <p className='text-warning'><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStarHalf></FaStarHalf>{recipie.rating}</p>
-
+                                    <p className='d-flex align-items-center'>
+                                        <Rating
+                                            style={{ maxWidth: 150 }} value={Math.round(rating?.rating || 0)} read /><span className='ms-2'>{recipie?.rating}</span>
+                                    </p>
                                 </Card.Body>
                             </Card>
                         </Col>
