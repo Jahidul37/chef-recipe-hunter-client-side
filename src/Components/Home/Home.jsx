@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+
 import { Container, Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import BannerPage from '../BannerPage/BannerPage';
 import Cards from './Cards/Cards';
-import CookShaperDetails from './CookShaperDetails/CookShaperDetails';
+
 
 const Home = () => {
     const cookdata = useLoaderData();
-    console.log(cookdata);
+
+    // console.log(cookdata);
 
     return (
         <>
@@ -27,9 +28,7 @@ const Home = () => {
                 </Row>
 
             </Container>
-            <CookShaperDetails>
 
-            </CookShaperDetails>
         </>
     );
 };

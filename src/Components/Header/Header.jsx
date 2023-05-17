@@ -34,7 +34,7 @@ const Header = () => {
 
                     </Nav>
                     <Nav className='fw-bold'>
-                        <Link className='text-decoration-none text-dark m-3 my-auto' to='/'>Home</Link >
+                        <Link className='text-decoration-none n m-3 my-auto' to='/'>Home</Link >
                         <Link className='text-decoration-none text-dark m-3 my-auto' to='/blog'>Blog</Link>
                         {user &&
                             <FaUserCircle className='my-auto' style={{ fontSize: '2rem' }}></FaUserCircle>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '../Header';
 import { Outlet } from 'react-router-dom';
+import Footers from './Footers';
 
 
 const Main = () => {
@@ -10,6 +11,8 @@ const Main = () => {
 
             <Header></Header>
             <Outlet></Outlet>
+            <Footers></Footers>
+
         </div>
     );
 };

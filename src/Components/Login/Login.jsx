@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { FaGithub } from 'react-icons/fa';
+import Image7 from './../../assets/kindpng_1280187.png';
 
 const Login = () => {
     const { signInUser } = useContext(AuthContext)
@@ -112,21 +112,23 @@ const Login = () => {
             <div className='my-4'>
                 {
                     user ?
-                        <button onClick={handleSignOut}>signOut</button>
+                        <button onClick={handleSignOut}></button>
                         :
                         <>
                             <GoogleButton className='mx-auto'
                                 onClick={handleGoogleSignIn}
                             />
-                            <Button onClick={handleGithubSignIn} variant=" border border-primary my-3 p-3 fw-semibold">
-                                <FaGithub className='fs-3 me-2'></FaGithub>GitHub Login</Button>
+                            <p className='mx-auto ps-5'><Button onClick={handleGithubSignIn} variant=" border border-primary my-3 px-5">
+                                <img className="m-2" style={{ height: '30px', }} src={Image7} alt="" /></Button></p>
 
                         </>
                 }
-                {user && <div>
-                    <h3>user:{user.displayName}</h3>
-                    <p><img src={user.photoURL} alt="" /></p>
-                </div>
+                {
+                    user && <Link to='/profile'>
+
+                        <p><img src={user.photoURL} alt="" /></p>
+
+                    </Link>
                 }
             </div>
 

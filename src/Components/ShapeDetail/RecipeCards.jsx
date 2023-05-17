@@ -1,7 +1,8 @@
 import { Card, Col, Row } from 'react-bootstrap';
+import { FaStar, FaStarHalf } from 'react-icons/fa';
 
 const RecipeCards = ({ recipies }) => {
-    // console.log(recipies);
+    console.log(recipies);
     return (
         <div>
             <Row xs={1} md={2} lg={3} className="g-4">
@@ -19,6 +20,9 @@ const RecipeCards = ({ recipies }) => {
                                                 key={data.id}>{data}</p>)
                                         }
                                     </div>
+
+                                    <p><h6>Recipie Process:</h6> {recipie.methodOfCooking}</p>
+                                    <p className='text-warning'><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStarHalf></FaStarHalf>{recipie.rating}</p>
 
                                 </Card.Body>
                             </Card>
