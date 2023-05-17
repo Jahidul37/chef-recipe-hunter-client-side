@@ -28,7 +28,7 @@ const Footers = () => {
                     <Col sm>
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label><h4 className="text-light">Contact</h4></Form.Label>
+                                <Form.Label><h4 className="text-light">Contact Us</h4></Form.Label>
                                 <Form.Control type="email" placeholder="Enter your email" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
