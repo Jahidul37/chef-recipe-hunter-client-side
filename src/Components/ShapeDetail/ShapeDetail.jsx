@@ -12,7 +12,7 @@ const ShapeDetail = () => {
     const { chefImage, chefName, chefBio } = chefData;
     const [recipies, setRecipies] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/recipesdata/${chefData.recipeId}`)
+        fetch(`https://chef-recipe-hunter-server-side-jahidul37.vercel.app/recipesdata/${chefData.recipeId}`)
             .then(res => res.json())
             .then(data => {
                 setRecipies(data);
