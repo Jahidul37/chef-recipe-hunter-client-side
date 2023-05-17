@@ -19,20 +19,23 @@ const ShapeDetail = () => {
             })
     }, [])
     return (
-        <Container className="my-3 ">
-            <Card className="my-4">
-                <Card.Img style={{ height: '450px', width: 'auto' }} src={chefImage} />
-                <Card.Body>
-                    <Card.Title>{chefName}</Card.Title>
-                    <Card.Text>
-                        <p>{chefBio}</p>
-                    </Card.Text>
+        <>
 
-                </Card.Body>
-            </Card>
+            <Container className="my-3 ">
+                <Card className="my-4">
+                    <Card.Img style={{ height: '450px', width: 'auto' }} src={chefImage} />
+                    <Card.Body>
+                        <Card.Title>{chefName}</Card.Title>
+                        <Card.Text>
+                            <p>{chefBio}</p>
+                        </Card.Text>
 
-            <RecipeCards recipies={recipies}></RecipeCards>
-        </Container>
+                    </Card.Body>
+                </Card>
+
+                <RecipeCards recipies={recipies}></RecipeCards>
+            </Container>
+        </>
     );
 };
 

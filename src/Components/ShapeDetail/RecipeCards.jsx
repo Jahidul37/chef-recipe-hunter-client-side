@@ -5,6 +5,7 @@ const RecipeCards = ({ recipies }) => {
     console.log(recipies);
     return (
         <div>
+            <h2>Our Member</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     recipies?.map((recipie, i) => (

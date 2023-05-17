@@ -15,7 +15,8 @@ const Home = () => {
         <>
             <BannerPage></BannerPage>
 
-            <Container className='my-4'>
+            <Container className='my-5'>
+                <h2 className='my-3 text-center'>Our Member</h2>
                 <Row xs={1} md={2} lg={3} className="g-4">
 
                     {
